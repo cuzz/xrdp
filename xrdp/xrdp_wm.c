@@ -553,6 +553,10 @@ xrdp_wm_init(struct xrdp_wm* self)
               r = self->session->client_info->username;
             }
           }
+          else if (g_strncmp("ask", r, 3) == 0)
+          {
+              r = r+3;
+          }
           list_add_item(self->mm->login_names, (long)g_strdup(q));
           list_add_item(self->mm->login_values, (long)g_strdup(r));
         }
